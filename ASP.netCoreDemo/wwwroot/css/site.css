@@ -59,8 +59,10 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background: linear-gradient(rgba(226, 209, 209, 0.12) 0% , rgba(147, 157, 199, 0.71) 100%);
+    
 }
 .footer {
   position: absolute;
@@ -68,4 +70,32 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+h1 {
+    font-family: 'Courier New';
+    text-align: center;
+
+}
+p {
+    font-family: Arial;
+    font-size: 16px;
+    transition: opacity  1s;
+}
+tr {
+    font-family: 'Lucida Sans Typewriter';
+    background:linear-gradient(white 0% , gray 100%);
+}
+@keyframes rolltext{
+    0% {opacity: 0;}
+    25% {opacity: 0.2 ;}
+    50% {opacity : 0.4;}
+    75% {opacity: 0.5;}
+    85% {opacity: 0.7;}
+    100% {opacity: 1;}
+}
+h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    animation-name: rolltext;
+    animation-timing-function: ease-in-out;
+    animation-duration:3s;
 }

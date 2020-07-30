@@ -12,7 +12,7 @@ namespace ASP.netCoreDemo.Models
         private readonly IDbConnection _conn;
         public IEnumerable<Products> GetAllProducts()
         {
-            return _conn.Query<Products>("SELECT * FROM PRODUCTS");
+            return _conn.Query<Products>("SELECT * FROM PRODUCTS;");
         }
 
         public Products GetProduct(int id)
@@ -60,6 +60,17 @@ namespace ASP.netCoreDemo.Models
                                        new { id = product.ProductID });
             _conn.Execute("DELETE FROM Products WHERE ProductID = @id;",
                                        new { id = product.ProductID });
+        }
+
+        public IEnumerable<Reviews> GetReviews()
+        {
+           return _conn.Query<Reviews>("Select * from reviews;");
+        }
+
+        public void InsertReview(Reviews review)
+        {
+             _conn.Execute("Insert Into reviews (Reviewer,Comment) Values (@name,@comment);",
+                new { name = review.Reviewer, comment = review.Comment });
         }
 
         public ProductRepository(IDbConnection conn)

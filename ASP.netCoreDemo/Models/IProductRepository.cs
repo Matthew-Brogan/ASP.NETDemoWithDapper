@@ -14,5 +14,8 @@ namespace ASP.netCoreDemo.Models
         public IEnumerable<Category> GetCategories();
         public Products AssignProducts();
         public void DeleteProduct(Products product);
+        public IEnumerable<Reviews> GetReviews();
+        public void InsertReview(Reviews review);
+        
     }
 }
