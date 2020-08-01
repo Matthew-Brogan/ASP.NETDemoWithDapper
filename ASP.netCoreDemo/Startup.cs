@@ -34,6 +34,8 @@ namespace ASP.netCoreDemo
             });
 
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IReviewsRepository, ReviewsRepository>();
+
 
             services.AddControllersWithViews();
         }

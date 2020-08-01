@@ -2,7 +2,9 @@
 
 <h2>Reviews</h2>
 
-
+<div style="display: block">
+    <a href="/Reviews/InsertReview/">Add a review:</a>
+</div>
 
 
 <table class="table">
@@ -18,7 +20,7 @@
     @foreach (var review in Model)
     {
         <tr>
-            <td>@review.ReviewID</td>
+            <td><a href=/Reviews/ViewReview/@review.ReviewID>@review.ReviewID</a></td>
             <td><a href=/Product/ViewProduct/@review.ProductID>@review.ProductID</a></td>
             <td>@review.Reviewer</td>
             <td>@review.Rating</td>

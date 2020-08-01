@@ -62,16 +62,7 @@ namespace ASP.netCoreDemo.Models
                                        new { id = product.ProductID });
         }
 
-        public IEnumerable<Reviews> GetReviews()
-        {
-           return _conn.Query<Reviews>("Select * from reviews;");
-        }
-
-        public void InsertReview(Reviews review)
-        {
-             _conn.Execute("Insert Into reviews (Reviewer,Comment) Values (@name,@comment);",
-                new { name = review.Reviewer, comment = review.Comment });
-        }
+       
 
         public ProductRepository(IDbConnection conn)
         {

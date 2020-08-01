@@ -1,0 +1,33 @@
+﻿@model Reviews
+
+<h3>@Model.ReviewID Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Product ID</th>
+        <th>Reviewer</th>
+        <th>Rating</th>
+        <th>ReviewID</th>
+        <th>Comment</th>
+        
+    </tr>
+    <tr>
+        <td>@Model.ProductID</td>
+        <td>@Model.Reviewer</td>
+        <td>@Model.Rating</td>
+        <td>@Model.ReviewID</td>
+        <td>@Model.Comment</td>
+        
+    </tr>
+
+</table>
+
+<div style="display: block">
+    <a href="/Reviews/UpdateReviews/@Model.ReviewID">Update this Review</a>
+</div>
+<div style="display: block">
+    @using (Html.BeginForm("DeleteReview", "Reviews", "Post"))
+    {
+        <input type="hidden" asp-for="ReviewID" value="@Model.ReviewID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this review" />
+    }

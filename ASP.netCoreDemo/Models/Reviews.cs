@@ -7,7 +7,7 @@ namespace ASP.netCoreDemo.Models
 {
     public class Reviews
     {
-        public long ReviewID { get; set; }
+        public int ReviewID { get; set; }
         public int ProductID { get; set; }
         public string Reviewer { get; set; }
         public int Rating { get; set; }

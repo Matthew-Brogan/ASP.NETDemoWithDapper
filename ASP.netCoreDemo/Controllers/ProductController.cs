@@ -52,11 +52,7 @@ namespace ASP.netCoreDemo.Controllers
 
 
         }
-        public IActionResult Reviews()
-        {
-            var rev = repo.GetReviews();
-            return View(rev);
-        }
+       
         public IActionResult InsertProduct()
         {
             var prod = repo.AssignProducts();

@@ -1,0 +1,19 @@
+﻿@model Reviews
+
+<h2>Update @Model.Comment</h2>
+
+@using(Html.BeginForm("UpdateReviewToDatabase", "Reviews", "Post"))
+{
+    <input asp-for="ReviewID" type="hidden" value="@Model.ReviewID" />
+
+    <label asp-for="Reviewer" class="control-label">Name</label>
+
+    <input type="text" name="Name" class="form-control" value="@Model.Reviewer" />
+
+    <label asp-for="Comment" class="control-label">Comment</label>
+
+    <input type="text" step="0.01" name="Comment" class="form-control" value="@Model.Comment" />
+
+    <input type="submit" value="Update Review" class="btn btn-primary" />
+
+}
